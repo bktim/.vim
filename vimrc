@@ -1,33 +1,25 @@
-"basic setup,line number and syntax
-set number
-syntax on
+set number " show line number
+set ruler " show show the current row and column
 
-"filetype support
-filetype indent on
+"-----------------------------------------------------------
+" Practical Vim tips
+"-----------------------------------------------------------
 
-"show existing tab with 4 spaces width
-set tabstop=4
+" minimum config to activate vims built-in plugins (S. XXV)
+set nocompatible
+filetype plugin on
 
-"when indenting use 4 spaces width
-set shiftwidth=4
+" Tip 81 S.204
+" enable highlighting search matches
+set hlsearch
+" press ctrl+l to mute search highlighting temporarily 
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l> 
 
-"on pressing tab, insert 4 spaces
-set expandtab
 
 
-" enable color scheme
-
-" finding files 
-" search down into subfolders
-" Prodvides tab-completeion for all file-related tasks
-set path+=**
-
-" Display all matching files when we tab complete
-set wildmenu
-
-" This enables:
-" - Hit tab to :find by a partial match
-" - Use * to enable wildcard search (fuzzy)
-
-" - :b lets you autocomplete any open buffer
+"-----------------------------------------------------------
+" YAML Config
+"-----------------------------------------------------------
+filetype plugin indent on
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
