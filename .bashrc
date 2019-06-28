@@ -116,10 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# p. 137 tlcl
-# change umask to make directory sharing easier
-umask 0002
-
 # ignore duplicates in cmd history, increase history size to 1k
 export HISTCONTROL=ignoredumps
 export HISTSIZE=1000
