@@ -66,8 +66,26 @@ if has("autocmd")
 	autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 	autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
         autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab	
-endif
 
+	" settings according to PEP8 python standard, realpython.com
+	autocmd FileType python
+				\set tabstop=4 
+				\set softtabstop=4
+				\set shiftwidth=4
+				\set textwidth=79
+				\set expandtab
+				\set autoindent
+				\set fileformat=unix
+
+	" run python code keybinding
+	autocmd FileType python nnoremap <buffer> <F5> <Esc>:w<CR>:!clear;python3 %<CR>
+
+endif
+  
+"-----------------------------------------------------------
+" Easy expansion of the active file dir, Tip 42 p. 101
+"-----------------------------------------------------------
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 "-----------------------------------------------------------
 " Color schemes, let's try again...
