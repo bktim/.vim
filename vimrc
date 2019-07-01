@@ -94,6 +94,14 @@ set incsearch
 " Enable matching tags 
 runtime macros/matchit.vim
 
+
+
+"-----------------------------------------------------------
+" Emmet-vim settings
+"-----------------------------------------------------------
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
 "-----------------------------------------------------------
 " Color schemes, let's try again...
 "-----------------------------------------------------------
