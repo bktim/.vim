@@ -101,6 +101,7 @@ runtime macros/matchit.vim
 "-----------------------------------------------------------
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
+" this is just a test
 
 "-----------------------------------------------------------
 " Color schemes, let's try again...
