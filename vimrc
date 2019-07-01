@@ -31,9 +31,7 @@ nnoremap <silent> ]B :blast<CR>
 "-----------------------------------------------------------
 " YAML Config
 "-----------------------------------------------------------
-filetype plugin indent on
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
+filetype indent on
 
 "-----------------------------------------------------------
 " Split settings from thoughtbot.com
@@ -49,7 +47,6 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
-
 "-----------------------------------------------------------
 " do filetype stuff, vimcasts whitespace and filetypes
 "-----------------------------------------------------------
@@ -60,7 +57,6 @@ if has("autocmd")
 
 	" dunno if this works for YAML but let's try
 	autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-	"
 	
 	" settings according to google style guide for web dev
 	autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
@@ -86,6 +82,17 @@ endif
 " Easy expansion of the active file dir, Tip 42 p. 101
 "-----------------------------------------------------------
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+
+"-----------------------------------------------------------
+" Search settings
+"-----------------------------------------------------------
+
+" Enable incsearch, Tip 51 p.125
+set incsearch
+
+" Enable matching tags 
+runtime macros/matchit.vim
 
 "-----------------------------------------------------------
 " Color schemes, let's try again...
