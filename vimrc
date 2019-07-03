@@ -57,11 +57,11 @@ if has("autocmd")
 
 	" dunno if this works for YAML but let's try
 	autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-	
+
 	" settings according to google style guide for web dev
 	autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 	autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-        autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab	
+	autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab	
 
 	" settings according to PEP8 python standard, realpython.com
 	autocmd FileType python
@@ -77,7 +77,7 @@ if has("autocmd")
 	autocmd FileType python nnoremap <buffer> <F5> <Esc>:w<CR>:!clear;python3 %<CR>
 
 endif
-  
+
 "-----------------------------------------------------------
 " Easy expansion of the active file dir, Tip 42 p. 101
 "-----------------------------------------------------------
@@ -118,4 +118,5 @@ endif
 "-----------------------------------------------------------
 " Color schemes, let's try again...
 "-----------------------------------------------------------
+"set termguicolors
 
