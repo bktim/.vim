@@ -91,6 +91,9 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 " Enable incsearch, Tip 51 p.125
 set incsearch
 
+" Enable smart search
+set smartcase
+
 " Enable matching tags 
 runtime macros/matchit.vim
 
@@ -101,6 +104,16 @@ runtime macros/matchit.vim
 "-----------------------------------------------------------
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
+
+
+"-----------------------------------------------------------
+" Vim Templates - shapeshed.com/vim-templates/
+"-----------------------------------------------------------
+if has("autocmd")
+	augroup templates
+		autocmd BufnewFile *.py 0r ~/.vim/templates/skeleton.py
+	augroup END
+endif
 
 "-----------------------------------------------------------
 " Color schemes, let's try again...

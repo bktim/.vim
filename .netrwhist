@@ -1,4 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/home/tim/Downloads/code/jumps/practical_vim'
 let g:netrw_dirhist_2='/home/tim/Desktop/python'
+let g:netrw_dirhist_3='/home/tim/Desktop/python/projects/mysite'
+let g:netrw_dirhist_4='/home/tim/Desktop/python/projects/mysite/mysite'
+let g:netrw_dirhist_5='/home/tim/Desktop/python/projects/mysite'
+let g:netrw_dirhist_6='/home/tim'
+let g:netrw_dirhist_7='/home/tim/.vimgolf'
+let g:netrw_dirhist_8='/home/tim/.vimgolf/put'
