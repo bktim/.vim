@@ -65,13 +65,19 @@ if has("autocmd")
 
 	" settings according to PEP8 python standard, realpython.com
 	autocmd FileType python
-				\set tabstop=4 
-				\set softtabstop=4
-				\set shiftwidth=4
-				\set textwidth=79
-				\set expandtab
-				\set autoindent
-				\set fileformat=unix
+				\setlocal tabstop=4 
+				\setlocal softtabstop=4
+				\setlocal shiftwidth=4
+				\setlocal textwidth=79
+				\setlocal expandtab
+				\setlocal autoindent
+				\setlocal fileformat=unix
+				\setlocal formatoptions+=t
+
+	highlight BadWhitespace ctermbg=red guibg=red
+
+	nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+	au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
 
 	" run python code keybinding
 	autocmd FileType python nnoremap <buffer> <F5> <Esc>:w<CR>:!clear;python3 %<CR>
@@ -98,6 +104,13 @@ set smartcase
 runtime macros/matchit.vim
 
 
+"-----------------------------------------------------------
+" Substitution settings
+"-----------------------------------------------------------
+
+" Fixing the & command
+nnoremap & :&&<CR>
+xnoremap & :&&<CR>
 
 "-----------------------------------------------------------
 " Emmet-vim settings
