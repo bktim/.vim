@@ -128,8 +128,14 @@ if has("autocmd")
 	augroup END
 endif
 
+" display status line, using lightline vim plugin
+set laststatus=2
+
+
 "-----------------------------------------------------------
 " Color schemes, let's try again...
 "-----------------------------------------------------------
 "set termguicolors
+
+
 
