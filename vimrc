@@ -2,7 +2,7 @@ set number " show line number
 set ruler " show show the current row and column
 set encoding=utf-8 " The encoding displayed
 set fileencoding=utf-8 " The encoding written to the file.
-
+syntax enable
 
 "-----------------------------------------------------------
 " Practical Vim tips
@@ -132,10 +132,57 @@ endif
 set laststatus=2
 
 
+" enagle redo with U, as undo is u
+nnoremap U <C-R>
+
 "-----------------------------------------------------------
 " Color schemes, let's try again...
 "-----------------------------------------------------------
-"set termguicolors
+set background=dark
+colorscheme solarized
 
 
 
+"-----------------------------------------------------------
+" Leader Key custom mappings
+"-----------------------------------------------------------
+
+
+" this changes winheight when using term!
+set winheight=38
+
+" testing leader key
+map <SPACE> <leader>
+
+nmap <leader>+ 10<C-W>+<CR>
+nmap <leader>- 10<C-W>-<CR>
+
+nnoremap <leader>q :qa!<CR>
+nnoremap <leader>z :wqa<CR>
+nnoremap <leader>w :wa<CR>
+tnoremap <F1> <C-W>:q!<CR>
+
+"-----------------------------------------------------------
+" Netrw toggle stuff
+"-----------------------------------------------------------
+let g:netrw_banner=0
+let g:NetrwIsOpen=0
+
+" https://vi.stackexchange.com/questions/10988/toggle-explorer-window
+function! ToggleNetrw()
+    if g:NetrwIsOpen
+        let i = bufnr("$")
+        while (i >= 1)
+            if (getbufvar(i, "&filetype") == "netrw")
+                silent exe "bwipeout " . i 
+            endif
+            let i-=1
+        endwhile
+        let g:NetrwIsOpen=0
+    else
+        let g:NetrwIsOpen=1
+        silent Lexplore
+    endif
+endfunction
+
+noremap <leader>e :call ToggleNetrw()<CR>
