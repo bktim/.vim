@@ -157,8 +157,7 @@ map <SPACE> <leader>
 nmap <leader>+ 10<C-W>+<CR>
 nmap <leader>- 10<C-W>-<CR>
 
-nnoremap <leader>q :qa!<CR>
-nnoremap <leader>z :wqa<CR>
+nnoremap <leader>q :wqa!<CR>
 nnoremap <leader>w :wa<CR>
 tnoremap <F1> <C-W>:q!<CR>
 
@@ -186,3 +185,6 @@ function! ToggleNetrw()
 endfunction
 
 noremap <leader>e :call ToggleNetrw()<CR>
+
+
+set backspace=indent,eol,start
